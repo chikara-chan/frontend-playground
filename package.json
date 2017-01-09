@@ -1,0 +1,35 @@
+{
+    "name": "frontend-playground",
+    "version": "1.0.0",
+    "description": "Canvas and CSS is a playground for the front end web.",
+    "scripts": {
+        "build": "webpack",
+        "build:watch": "webpack --watch"
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "autoprefixer": "^6.6.1",
+        "babel-core": "^6.13.2",
+        "babel-loader": "^6.2.4",
+        "babel-plugin-add-module-exports": "^0.2.1",
+        "babel-plugin-transform-runtime": "^6.15.0",
+        "babel-preset-es2015": "^6.13.2",
+        "babel-preset-stage-0": "^6.16.0",
+        "css-loader": "^0.26.0",
+        "extract-text-webpack-plugin": "^1.0.1",
+        "file-loader": "^0.9.0",
+        "json-loader": "^0.5.4",
+        "node-sass": "^4.1.1",
+        "postcss-loader": "^1.2.1",
+        "sass-loader": "^4.0.1",
+        "style-loader": "^0.13.1",
+        "url-loader": "^0.5.7",
+        "webpack": "^1.13.1"
+    },
+    "author": "Chikara Chan",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/chikara-chan/frontend-playground.git"
+    },
+    "license": "MIT"
+}
