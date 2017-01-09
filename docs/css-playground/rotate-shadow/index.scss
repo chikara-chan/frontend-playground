@@ -1,0 +1,126 @@
+.info-box{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: #333;
+    transition-duration: 0.5s;
+    transition-property: transform box-shadow;
+}
+.info-box:hover{
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+.stage .circle, .stage .circle:after {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    border-radius: 50%
+}
+.stage {
+    position: relative;
+    height: 100%;
+    transform: scale(1) both
+}
+.info-box:hover .stage {
+    animation: spin 8s infinite ease-in-out;
+}
+@keyframes spin {
+    from {
+        transform: scale(1) rotate(0)
+    }
+    to {
+        transform: scale(1.5) rotate(20turn)
+    }
+}
+.stage .circle:after {
+    content: '';
+    width: 9px;
+    height: 9px;
+    margin: -4.5px -4.5px
+}
+@keyframes spin1 {
+    to {
+        transform: rotate(9turn)
+    }
+}
+.stage .circle:nth-child(1) {
+    width: 27px;
+    height: 27px;
+    margin: -13.5px -13.5px;
+    animation: spin1 8s infinite linear
+}
+.stage .circle:nth-child(1):after {
+    box-shadow: 0px 13.5px #fff, -13.5px 0px #fff, 0px -13.5px #fff, 13.5px 0px #fff
+}
+@keyframes spin2 {
+    to {
+        transform: rotate(8turn)
+    }
+}
+.stage .circle:nth-child(2) {
+    width: 58.5px;
+    height: 58.5px;
+    margin: -29.25px -29.25px;
+    animation: spin2 16s infinite linear
+}
+.stage .circle:nth-child(2):after {
+    box-shadow: 20.68287px 20.68287px #fff, 0px 29.25px #fff, -20.68287px 20.68287px #fff, -29.25px 0px #fff, -20.68287px -20.68287px #fff, 0px -29.25px #fff, 20.68287px -20.68287px #fff, 29.25px 0px #fff
+}
+@keyframes spin3 {
+    to {
+        transform: rotate(7turn)
+    }
+}
+.stage .circle:nth-child(3) {
+    width: 90px;
+    height: 90px;
+    margin: -45px -45px;
+    animation: spin3 24s infinite linear
+}
+.stage .circle:nth-child(3):after {
+    box-shadow: 38.97114px 22.5px #fff, 22.5px 38.97114px #fff, 0px 45px #fff, -22.5px 38.97114px #fff, -38.97114px 22.5px #fff, -45px 0px #fff, -38.97114px -22.5px #fff, -22.5px -38.97114px #fff, 0px -45px #fff, 22.5px -38.97114px #fff, 38.97114px -22.5px #fff, 45px 0px #fff
+}
+@keyframes spin4 {
+    to {
+        transform: rotate(6turn)
+    }
+}
+.stage .circle:nth-child(4) {
+    width: 121.5px;
+    height: 121.5px;
+    margin: -60.75px -60.75px;
+    animation: spin4 32s infinite linear
+}
+.stage .circle:nth-child(4):after {
+    box-shadow: 56.12568px 23.24802px #fff, 42.95674px 42.95674px #fff, 23.24802px 56.12568px #fff, 0px 60.75px #fff, -23.24802px 56.12568px #fff, -42.95674px 42.95674px #fff, -56.12568px 23.24802px #fff, -60.75px 0px #fff, -56.12568px -23.24802px #fff, -42.95674px -42.95674px #fff, -23.24802px -56.12568px #fff, 0px -60.75px #fff, 23.24802px -56.12568px #fff, 42.95674px -42.95674px #fff, 56.12568px -23.24802px #fff, 60.75px 0px #fff
+}
+@keyframes spin5 {
+    to {
+        transform: rotate(5turn)
+    }
+}
+.stage .circle:nth-child(5) {
+    width: 153px;
+    height: 153px;
+    margin: -76.5px -76.5px;
+    animation: spin5 40s infinite linear
+}
+.stage .circle:nth-child(5):after {
+    box-shadow: 72.75582px 23.6398px #fff, 61.8898px 44.96557px #fff, 44.96557px 61.8898px #fff, 23.6398px 72.75582px #fff, 0px 76.5px #fff, -23.6398px 72.75582px #fff, -44.96557px 61.8898px #fff, -61.8898px 44.96557px #fff, -72.75582px 23.6398px #fff, -76.5px 0px #fff, -72.75582px -23.6398px #fff, -61.8898px -44.96557px #fff, -44.96557px -61.8898px #fff, -23.6398px -72.75582px #fff, 0px -76.5px #fff, 23.6398px -72.75582px #fff, 44.96557px -61.8898px #fff, 61.8898px -44.96557px #fff, 72.75582px -23.6398px #fff, 76.5px 0px #fff
+}
+@keyframes spin6 {
+    to {
+        transform: rotate(4turn)
+    }
+}
+.stage .circle:nth-child(6) {
+    width: 184.5px;
+    height: 184.5px;
+    margin: -92.25px -92.25px;
+    animation: spin6 48s infinite linear
+}
+.stage .circle:nth-child(6):after {
+    box-shadow: 89.10666px 23.87606px #fff, 79.89084px 46.125px #fff, 65.2306px 65.2306px #fff, 46.125px 79.89084px #fff, 23.87606px 89.10666px #fff, 0px 92.25px #fff, -23.87606px 89.10666px #fff, -46.125px 79.89084px #fff, -65.2306px 65.2306px #fff, -79.89084px 46.125px #fff, -89.10666px 23.87606px #fff, -92.25px 0px #fff, -89.10666px -23.87606px #fff, -79.89084px -46.125px #fff, -65.2306px -65.2306px #fff, -46.125px -79.89084px #fff, -23.87606px -89.10666px #fff, 0px -92.25px #fff, 23.87606px -89.10666px #fff, 46.125px -79.89084px #fff, 65.2306px -65.2306px #fff, 79.89084px -46.125px #fff, 89.10666px -23.87606px #fff, 92.25px 0px #fff
+}

@@ -1,0 +1,519 @@
+// 角色构建
+.charactor {
+    width: 180px;
+    height: 393px;
+    padding-top: 3px;
+
+    .head {
+        position: relative;
+        top: 0;
+        width: 170px;
+        height: 175px;
+        margin-left: 23px;
+        transition: all 1s;
+
+        .ear {
+            position: absolute;
+            top: -2px;
+            left: 42px;
+            z-index: 1;
+            transform: rotate(-5deg);
+
+            &:nth-of-type(2) {
+                top: -3px;
+                left: 60px;
+                z-index: 0;
+                transform: scale(0.8) rotate(10deg);
+
+                .high {
+                    border: 6px solid #333;
+
+                }
+
+                .low {
+                    border: 6px solid #333;
+
+                    &::before {
+                        top: -8px;
+                        right: 0;
+                        width: 2px;
+                        height: 10px;
+                    }
+                }
+            }
+
+            .high {
+                position: relative;
+                width: 20px;
+                height: 20px;
+                background: #fff;
+                border: 5px solid #333;
+                transform: skew(20deg);
+            }
+
+            .low {
+                position: relative;
+                left: 1px;
+                top: -5px;
+                width: 17px;
+                height: 12px;
+                background: #fff;
+                border: 5px solid #333;
+                border-bottom: none;
+                transform: skew(20deg);
+
+                &::before {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    top: -5px;
+                    right: 0;
+                    width: 4px;
+                    height: 6px;
+                    background: #fff;
+                }
+
+                &::after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    bottom: -5px;
+                    height: 10px;
+                    background: #fff;
+                }
+            }
+        }
+
+        .head-left {
+            position: absolute;
+            top: 20px;
+            width: 130px;
+            height: 160px;
+            background: #fff;
+            border: 5px solid #333;
+            border-radius: 38% 38% 30% 30% / 70% 70% 30% 30%;
+
+            .brow {
+                position: absolute;
+                top: 18px;
+                left: 72px;
+                width: 15px;
+                height: 5px;
+                background: #333;
+                border-radius: 20% 20% 20% 20% / 50% 50% 50% 50%;
+                animation: brow-animate 2s infinite linear;
+
+                @keyframes brow-animate {
+                    from {
+                        transform: rotate(-25deg) translate(0, -1px);
+                    }
+                    50% {
+                        transform: rotate(-25deg) translate(0, 1px);
+                    }
+                    to {
+                        transform: rotate(-25deg) translate(0, -1px);
+                    }
+                }
+            }
+
+            .eye {
+                position: absolute;
+                top: 25px;
+                left: 70px;
+                width: 32px;
+                height: 45px;
+                background: #fff;
+                border: 5px solid #333;
+                border-radius: 40% 50% 40% 40% / 50% 50% 50% 50%;
+                transform: rotate(20deg);
+
+                .eyeball {
+                    position: absolute;
+                    top: 5px;
+                    right: -1px;
+                    width: 12px;
+                    height: 16px;
+                    background: #333;
+                    border-radius: 50%;
+                    animation: eye-animate 2s infinite linear;
+
+                    @keyframes eye-animate {
+                        from {
+                            transform: translate(0, 3px);
+                        }
+                        50% {
+                            transform: translate(0, -3px);
+                        }
+                        to {
+                            transform: translate(0, 3px);
+                        }
+                    }
+                }
+            }
+
+            .blusher {
+                position: absolute;
+                top: 86px;
+                left: 50px;
+                width: 32px;
+                height: 14px;
+                background: #f59273;
+                border-radius: 50%;
+                z-index: 1;
+            }
+
+            .mouse {
+                position: absolute;
+                top: 122px;
+                left: 72px;
+                width: 14px;
+                height: 18px;
+                background: #f59273;
+                border: 5px solid #333;
+                border-radius: 0% 0% 50% 50% / 0% 0% 80% 80%;
+                z-index: 1;
+                animation: mouse-animate 2s infinite linear;
+
+                @keyframes mouse-animate {
+                    from {
+                        transform: rotate(30deg) translate(0, -1px) scale(1.1);
+                    }
+                    50% {
+                        transform: rotate(30deg) translate(0, 2px) scale(1);
+                    }
+                    to {
+                        transform: rotate(30deg) translate(0, -1px) scale(1.1);
+                    }
+                }
+
+                &::before {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    top: -8px;
+                    left: -15px;
+                    width: 20px;
+                    height: 1px;
+                    border-left: 5px solid transparent;
+                    border-right: 5px solid transparent;
+                    border-top: 5px solid transparent;
+                    border-bottom: 5px solid #333;
+                    border-radius: 50%;
+                    transform: rotate(120deg);
+                    z-index: 1;
+                }
+
+                &::after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    top: -10px;
+                    left: -11px;
+                    width: 26px;
+                    height: 10px;
+                    background: #fff;
+                    border-left: 5px solid transparent;
+                    border-right: 5px solid transparent;
+                    border-top: 5px solid transparent;
+                    border-bottom: 5px solid #333;
+                    border-radius: 50%;
+                }
+            }
+        }
+
+        .head-right {
+            position: absolute;
+            left: 80px;
+            top: 110px;
+            width: 70px;
+            height: 55px;
+            background: #fff;
+            border-right: 5px solid #333;
+            border-bottom: 5px solid #333;
+            border-left: 5px solid transparent;
+            border-top: 5px solid transparent;
+            border-radius: 0% 0% 50% 50% / 0% 40% 60% 30%;
+            transform: rotate(-42deg);
+
+            .nose {
+                position: absolute;
+                top: 30px;
+                right: -2px;
+                width: 12px;
+                height: 20px;
+                background: #333;
+                border-radius: 40% 60% 90% 10% / 20% 40% 40% 10%;
+                transform: rotate(45deg);
+            }
+
+        }
+    }
+
+    .body {
+        position: relative;
+        top: 0;
+        z-index: 2;
+        width: 90px;
+        height: 50px;
+        margin-left: 43px;
+        background: linear-gradient(180deg, #b4d469 19px, #fff 20px, #fff 23px, #b4d469 24px);
+        border: 5px solid #333;
+        border-radius: 30% 30% 45% 45% / 80% 80% 20% 20%;
+        transition: all 1s;
+
+        .hand {
+            position: absolute;
+            right: -12px;
+            top: 22px;
+            width: 22px;
+            height: 35px;
+            background: #fff;
+            border: 5px solid #333;
+            border-radius: 20% 40% 50% 50% / 20% 50% 50% 40%;
+            animation: hand-animate 2s infinite linear;
+            transform-origin: 0% 0%;
+
+            @keyframes hand-animate {
+                from {
+                    transform: rotate(-70deg);
+                }
+                50% {
+                    transform: rotate(-90deg);
+                }
+                to {
+                    transform: rotate(-70deg);
+                }
+            }
+
+            &::after {
+                content: '';
+                display: block;
+                position: absolute;
+                top: -18px;
+                left: -4px;
+                z-index: 1;
+                width: 5px;
+                height: 24px;
+                border-bottom: 5px solid transparent;
+                border-right: 5px solid transparent;
+                border-top: 5px solid transparent;
+                border-left: 5px solid #333;
+                border-radius: 50%;
+                transform: rotate(10deg);
+            }
+        }
+    }
+
+    .ass {
+        position: relative;
+        top: -10px;
+        z-index: 2;
+        width: 85px;
+        height: 24px;
+        margin-left: 45px;
+        background: #fff;
+        border: 5px solid #333;
+        border-radius: 0% 0% 45% 45% / 0% 0% 100% 100%;
+
+        .foot {
+            position: absolute;
+            top: 10px;
+            width: 22px;
+            height: 26px;
+            margin-left: 37px;
+            background: #fff;
+            border: 5px solid #333;
+            border-top: none;
+            border-radius: 0% 0% 50% 50% / 0% 0% 40% 40%;
+            animation: foot-animate 1s infinite linear;
+            transform-origin: 50% 0%;
+
+            @keyframes foot-animate {
+                from {
+                    transform: rotate(-33deg);
+                }
+                50% {
+                    transform: rotate(-65deg);
+                }
+                to {
+                    transform: rotate(-33deg);
+                }
+            }
+
+            &::after {
+                content: '';
+                display: block;
+                position: absolute;
+                top: 0;
+                right: -5px;
+                z-index: 1;
+                width: 5px;
+                height: 5px;
+                background: #fff;
+            }
+        }
+    }
+
+    .ball {
+        position: relative;
+        z-index: 1;
+        width: 170px;
+        height: 170px;
+        margin-top: -40px;
+        margin-left: 5px;
+        background: #83cff3;
+        border: 5px solid #333;
+        border-radius: 50%;
+
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 70px;
+            right: 12px;
+            width: 12px;
+            height: 20px;
+            border-radius: 20% 40% 50% 50% / 20% 50% 50% 40%;
+            background: #fff;
+            transform-origin: -56px 10px;
+            animation: ball-roll 3s infinite linear;
+
+            @keyframes ball-roll {
+                to {
+                    transform: rotate(360deg);
+                }
+            }
+        }
+    }
+
+    .shadow {
+        position: relative;
+        z-index: 0;
+        width: 140px;
+        height: 15px;
+        margin-top: -5px;
+        margin-left: 20px;
+        background: #fab432;
+        border-radius: 50%;
+    }
+}
+
+// 角色动画
+.charactor {
+    &:hover {
+        .head {
+            top: -200px;
+        }
+        .body {
+            top: -80px;
+        }
+    }
+
+    .head, .body, .ass {
+        animation: move 5s infinite linear;
+
+        @keyframes move {
+            @for $i from 0 through 10 {
+                @if $i % 2 == 1 {
+                    #{$i * 10 - 2}% {
+                        transform: translate(100px * $i - 15px, -120px);
+                    }
+                    #{$i * 10}% {
+                        transform: translate(100px * $i, -130px);
+                    }
+                    #{$i * 10 + 2}% {
+                        transform: translate(100px * $i + 15px, -120px);
+                    }
+                } @else if $i != 0 {
+                    #{$i * 10 - 2}% {
+                        transform: translate(100px * $i - 10px, 30px);
+                    }
+                    #{$i * 10}% {
+                        transform: translate(100px * $i, 36px);
+                    }
+                    #{$i * 10 + 2}% {
+                        transform: translate(100px * $i + 10px, 30px);
+                    }
+                }
+            }
+        }
+    }
+
+    .ball {
+        transform-origin: 50% 0%;
+        animation: ball-move 5s infinite linear;
+
+        @keyframes ball-move {
+            @for $i from 0 through 10 {
+                @if $i % 2 == 1 {
+                    #{$i * 10 - 3}% {
+                        transform: translate(100px * $i - 20px, -40px);
+                    }
+                    #{$i * 10}% {
+                        transform: translate(100px * $i, -50px);
+                    }
+                    #{$i * 10 + 3}% {
+                        transform: translate(100px * $i + 20px, -40px);
+                    }
+                } @else if $i != 0 {
+                    #{$i * 10 - 2}% {
+                        transform: translate(100px * $i - 10px, 36px) scale(1.2, 0.8);
+                    }
+                    #{$i * 10}% {
+                        transform: translate(100px * $i, 42px) scale(1.25, 0.75);
+                    }
+                    #{$i * 10 + 2}% {
+                        transform: translate(100px * $i + 10px, 36px) scale(1.2, 0.8);
+                    }
+                }
+            }
+        }
+    }
+
+    .shadow {
+        animation: shadow-move 5s infinite linear;
+
+        @keyframes shadow-move {
+            @for $i from 0 through 10 {
+                @if $i % 2 == 1 {
+                    #{$i * 10 - 3}% {
+                        transform: translate(100px * $i - 20px);
+                    }
+                    #{$i * 10}% {
+                        transform: translate(100px * $i);
+                    }
+                    #{$i * 10 + 3}% {
+                        transform: translate(100px * $i + 20px);
+                    }
+                } @else if $i != 0 {
+                    #{$i * 10 - 2}% {
+                        transform: translate(100px * $i - 10px) scale(1.2);
+                    }
+                    #{$i * 10}% {
+                        transform: translate(100px * $i) scale(1.3);
+                    }
+                    #{$i * 10 + 2}% {
+                        transform: translate(100px * $i + 10px) scale(1.2);
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 页面定位
+.charactor {
+    position: absolute;
+  left: -70px;
+  bottom: 40px;
+}
+
+body::after {
+  content: 'Hover and make the dog\'s body seperate, ahahha!!!';
+  display: block;
+  position: absolute;
+  left: 10px;
+  bottom: 5px;
+}
