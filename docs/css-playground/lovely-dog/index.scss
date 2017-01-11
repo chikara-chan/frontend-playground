@@ -510,6 +510,11 @@
   bottom: 40px;
 }
 
+body {
+    margin: 0;
+    background: #FE9A76;
+}
+
 body::after {
   content: 'Hover and make the dog\'s body seperate, ahahha!!!';
   display: block;
