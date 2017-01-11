@@ -38,22 +38,23 @@ class Triangle {
     updateVertex() {
         this.x1 = this.x
         this.y1 = this.y - this.side * Math.sqrt(3) / 2 + this.side * Math.tan(Math.PI / 12) / 2
-        this.x2 = this.x + this.side / 2
+        this.x2 = this.x - this.side / 2
         this.y2 = this.y + this.side * Math.tan(Math.PI / 12) / 2
-        this.x3 = this.x - this.side / 2
+        this.x3 = this.x + this.side / 2
         this.y3 = this.y + this.side * Math.tan(Math.PI / 12) / 2
     }
 
     draw() {
         ctx.beginPath()
-        kontsevich(this.x1, this.y1, this.x2, this.y2, 1, deep)
-        kontsevich(this.x2, this.y2, this.x3, this.y3, 1, deep)
-        kontsevich(this.x3, this.y3, this.x1, this.y1, 1, deep)
-        ctx.stroke()
+        ctx.fillStyle = '#fff'
+        koch(this.x1, this.y1, this.x2, this.y2, 1, deep)
+        koch(this.x2, this.y2, this.x3, this.y3, 1, deep)
+        koch(this.x3, this.y3, this.x1, this.y1, 1, deep)
+        ctx.fill()
     }
 }
 /**
- * Kontsevich's formula
+ * Snowflake formula
  * @param  {Number} x1
  * @param  {Number} y1
  * @param  {Number} x2
@@ -61,26 +62,26 @@ class Triangle {
  * @param  {Number} level
  * @param  {Number} deep
  */
-function kontsevich(x1, y1, x2, y2, level, deep) {
+function koch(x1, y1, x2, y2, level, deep) {
     const x3 = (x2 - x1) / 3 + x1,
         y3 = (y2 - y1) / 3 + y1,
-        x4 = x3 + ((x2 - x1) - (y2 - y1) * Math.sqrt(3)) / 6,
-        y4 = y3 + ((x2 - x1) * Math.sqrt(3) + (y2 - y1)) / 6,
-        x5 = (x2 - x1) / 3 * 2 + x1,
-        y5 = (y2 - y1) / 3 * 2 + y1
+        x4 = (x2 - x1) / 3 * 2 + x1,
+        y4 = (y2 - y1) / 3 * 2 + y1,
+        x5 = x3 + ((x2 - x1) - (y2 - y1) * Math.sqrt(3)) / 6,
+        y5 = y3 + ((x2 - x1) * Math.sqrt(3) + (y2 - y1)) / 6
 
     if (level === deep) {
-        ctx.moveTo(x1, y1)
+        ctx.lineTo(x1, y1)
         ctx.lineTo(x3, y3)
-        ctx.lineTo(x4, y4)
         ctx.lineTo(x5, y5)
+        ctx.lineTo(x4, y4)
         ctx.lineTo(x2, y2)
     } else {
         level++
-        kontsevich(x1, y1, x3, y3, level, deep)
-        kontsevich(x3, y3, x4, y4, level, deep)
-        kontsevich(x4, y4, x5, y5, level, deep)
-        kontsevich(x5, y5, x2, y2, level, deep)
+        koch(x1, y1, x3, y3, level, deep)
+        koch(x3, y3, x5, y5, level, deep)
+        koch(x5, y5, x4, y4, level, deep)
+        koch(x4, y4, x2, y2, level, deep)
     }
 
 }
