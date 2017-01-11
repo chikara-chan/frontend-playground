@@ -7,6 +7,7 @@ const path = require('path'),
 module.exports = {
     entry: {
         'canvas-playground/viscosity/bundle': './docs/canvas-playground/viscosity',
+        'canvas-playground/snowflake/bundle': './docs/canvas-playground/snowflake',
         'css-playground/lovely-dog/bundle': './docs/css-playground/lovely-dog',
         'css-playground/rotate-cube/bundle': './docs/css-playground/rotate-cube',
         'css-playground/rotate-shadow/bundle': './docs/css-playground/rotate-shadow'
