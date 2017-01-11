@@ -6,6 +6,8 @@ Canvas and CSS is a playground for the front end web.
 ## Canvas Playground
 [viscosity](https://chikara-chan.github.io/frontend-playground/canvas-playground/viscosity)
 
+[snowflake](https://chikara-chan.github.io/frontend-playground/canvas-playground/snowflake)
+
 ## CSS Playground
 [lovely-dog](https://chikara-chan.github.io/frontend-playground/css-playground/lovely-dog)
 
