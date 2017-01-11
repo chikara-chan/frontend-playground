@@ -1,5 +1,5 @@
 # Frontend Playground
-Canvas and CSS is a playground for the front end web.
+Canvas and CSS is a playground for the front end web. ———— Updating continuously
 
 # Live Demo
 
