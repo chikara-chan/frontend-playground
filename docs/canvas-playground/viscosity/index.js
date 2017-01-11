@@ -6,7 +6,6 @@ const canvas = document.querySelector('canvas'),
 	threshold = 200,
 	viscosity = 10,
 	damping = 0.1
-
 let timer, mouseTimer, points, gutter,
 	mouseX = 0,
 	mouseY = 0,
@@ -16,26 +15,28 @@ let timer, mouseTimer, points, gutter,
 	mouseVelY = 0,
 	mouseDirectionX = 'none'
 
-function Point(x, y) {
-	this.x = x
-	this.originX = x
-	this.velX = 0
-	this.y = y
-	this.originY = y
-}
+class Point {
+    constructor(x, y) {
+        this.x = x
+        this.originX = x
+        this.velX = 0
+        this.y = y
+        this.originY = y
+    }
 
-Point.prototype.update = function() {
-	var distanceX = this.x - mouseX,
-		distanceY = this.y - mouseY
+    update() {
+        var distanceX = this.x - mouseX,
+            distanceY = this.y - mouseY
 
-	this.velX += (this.originX - this.x) / viscosity
-	if (mouseDirectionX === 'right' && mouseX > this.x || mouseDirectionX === 'left' && mouseX < this.x) {
-		if (Math.abs(distanceX) < threshold && Math.abs(distanceY) < gutter) {
-			this.velX = mouseVelX / 2
-		}
-	}
-	this.velX *= 1 - damping
-	this.x += this.velX
+        this.velX += (this.originX - this.x) / viscosity
+        if (mouseDirectionX === 'right' && mouseX > this.x || mouseDirectionX === 'left' && mouseX < this.x) {
+            if (Math.abs(distanceX) < threshold && Math.abs(distanceY) < gutter) {
+                this.velX = mouseVelX / 2
+            }
+        }
+        this.velX *= 1 - damping
+        this.x += this.velX
+    }
 }
 
 function init() {
@@ -60,16 +61,14 @@ function initCanvas() {
 }
 
 function update() {
-    let i
-
-	for (i in points) {
-		points[i].update()
-	}
-	render()
+    points.forEach(point => {
+        point.update()
+    })
+	draw()
 	timer = requestAnimationFrame(update)
 }
 
-function render() {
+function draw() {
 	let midx, midy, i
 
 	ctx.clearRect(0, 0, canvas.width, canvas.height)
