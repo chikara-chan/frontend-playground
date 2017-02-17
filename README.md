@@ -1,5 +1,5 @@
 # Frontend Playground
-Canvas and CSS is a playground for the front end web. ——— Updating continuously 🔥🔥🔥
+Canvas and CSS is a playground for the front-end. ——— Updating continuously 🔥🔥🔥
 
 # Live Demo
 
@@ -19,4 +19,4 @@ Canvas and CSS is a playground for the front end web. ——— Updating continu
 Chikara Chan
 
 # Lisence
-MIT
+Released under the MIT license.
