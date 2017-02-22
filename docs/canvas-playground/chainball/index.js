@@ -1,6 +1,6 @@
 const canvas = document.querySelector('canvas'),
     ctx = canvas.getContext('2d')
-let timer, totalBall,
+let timer, totalBall, mouseX, mouseY,
     balls = []
 
 class Ball {
@@ -60,12 +60,13 @@ function draw() {
         ball.draw()
     })
     linkBalls()
+    linkMouse()
 }
 
 function linkBalls() {
     for (let i = 0; i < balls.length; i++) {
         for (let j = i; j < balls.length; j++) {
-            const distance = Math.sqrt(Math.pow(balls[i].x - balls[j].x, 2) + Math.pow(balls[i].y - balls[j].y, 2))
+            const distance = Math.sqrt((balls[i].x - balls[j].x) ** 2 + (balls[i].y - balls[j].y) ** 2)
             if (distance < 200) {
                 ctx.strokeStyle = `rgba(255, 255, 255, ${50 / distance})`
                 ctx.lineWidth = 1
@@ -76,6 +77,29 @@ function linkBalls() {
             }
         }
     }
+}
+
+function linkMouse() {
+    console.log(mouseX)
+    if (!mouseX && !mouseY) {
+        return
+    }
+    for (let i = 0; i < balls.length; i++) {
+        const distance = Math.sqrt((balls[i].x - mouseX) ** 2 + (balls[i].y - mouseY) ** 2)
+        if (distance < 300) {
+            ctx.strokeStyle = `rgba(255, 255, 255, ${50 / distance})`
+            ctx.lineWidth = 1
+            ctx.beginPath()
+            ctx.moveTo(balls[i].x, balls[i].y)
+            ctx.lineTo(mouseX, mouseY)
+            ctx.stroke()
+        }
+    }
+}
+
+function mousemove(e) {
+    mouseX = e.offsetX
+    mouseY = e.offsetY
 }
 
 function detectCollide() {
@@ -91,6 +115,7 @@ function detectCollide() {
 
 function bindEvents() {
     window.addEventListener('resize', initCanvas)
+    canvas.addEventListener('mousemove', mousemove)
 }
 
 init()

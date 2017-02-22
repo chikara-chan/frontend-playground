@@ -60,6 +60,8 @@
 	    ctx = canvas.getContext('2d');
 	var timer = void 0,
 	    totalBall = void 0,
+	    mouseX = void 0,
+	    mouseY = void 0,
 	    balls = [];
 
 	var Ball = function () {
@@ -126,6 +128,7 @@
 	        ball.draw();
 	    });
 	    linkBalls();
+	    linkMouse();
 	}
 
 	function linkBalls() {
@@ -144,6 +147,29 @@
 	    }
 	}
 
+	function linkMouse() {
+	    console.log(mouseX);
+	    if (!mouseX && !mouseY) {
+	        return;
+	    }
+	    for (var i = 0; i < balls.length; i++) {
+	        var distance = Math.sqrt(Math.pow(balls[i].x - mouseX, 2) + Math.pow(balls[i].y - mouseY, 2));
+	        if (distance < 300) {
+	            ctx.strokeStyle = 'rgba(255, 255, 255, ' + 50 / distance + ')';
+	            ctx.lineWidth = 1;
+	            ctx.beginPath();
+	            ctx.moveTo(balls[i].x, balls[i].y);
+	            ctx.lineTo(mouseX, mouseY);
+	            ctx.stroke();
+	        }
+	    }
+	}
+
+	function mousemove(e) {
+	    mouseX = e.offsetX;
+	    mouseY = e.offsetY;
+	}
+
 	function detectCollide() {
 	    balls.forEach(function (ball) {
 	        if (ball.x - ball.r < 0 || ball.x + ball.r > canvas.width) {
@@ -157,6 +183,7 @@
 
 	function bindEvents() {
 	    window.addEventListener('resize', initCanvas);
+	    canvas.addEventListener('mousemove', mousemove);
 	}
 
 	init();
