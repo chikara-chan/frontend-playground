@@ -8,6 +8,7 @@ module.exports = {
     entry: {
         'canvas-playground/viscosity/bundle': './docs/canvas-playground/viscosity',
         'canvas-playground/snowflake/bundle': './docs/canvas-playground/snowflake',
+        'canvas-playground/chainball/bundle': './docs/canvas-playground/chainball',
         'css-playground/lovely-dog/bundle': './docs/css-playground/lovely-dog',
         'css-playground/rotate-cube/bundle': './docs/css-playground/rotate-cube',
         'css-playground/rotate-shadow/bundle': './docs/css-playground/rotate-shadow'
