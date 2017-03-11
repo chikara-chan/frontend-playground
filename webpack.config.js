@@ -11,7 +11,8 @@ module.exports = {
         'canvas-playground/chainball/bundle': './docs/canvas-playground/chainball',
         'css-playground/lovely-dog/bundle': './docs/css-playground/lovely-dog',
         'css-playground/rotate-cube/bundle': './docs/css-playground/rotate-cube',
-        'css-playground/rotate-shadow/bundle': './docs/css-playground/rotate-shadow'
+        'css-playground/rotate-shadow/bundle': './docs/css-playground/rotate-shadow',
+        'css-playground/transform-text/bundle': './docs/css-playground/transform-text'
     },
     output: {
         path: './docs',
