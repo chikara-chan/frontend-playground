@@ -3,6 +3,8 @@ Canvas and CSS is a playground for the front-end. ——— Updating continuousl
 
 # Live Demo
 
+Synchronized with [CodePen](http://codepen.io/chikara-chan/)
+
 ### Canvas Playground
 [viscosity](https://chikara-chan.github.io/frontend-playground/canvas-playground/viscosity)
 
