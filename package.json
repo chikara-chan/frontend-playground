@@ -6,7 +6,9 @@
         "build": "webpack",
         "build:watch": "webpack --watch"
     },
-    "dependencies": {},
+    "dependencies": {
+        "three": "^0.89.0"
+    },
     "devDependencies": {
         "autoprefixer": "^6.6.1",
         "babel-core": "^6.13.2",

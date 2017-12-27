@@ -12,7 +12,8 @@ module.exports = {
         'css-playground/lovely-dog/bundle': './docs/css-playground/lovely-dog',
         'css-playground/rotate-cube/bundle': './docs/css-playground/rotate-cube',
         'css-playground/rotate-shadow/bundle': './docs/css-playground/rotate-shadow',
-        'css-playground/transform-text/bundle': './docs/css-playground/transform-text'
+        'css-playground/transform-text/bundle': './docs/css-playground/transform-text',
+        'threejs-playground/particle/bundle': './docs/threejs-playground/particle'
     },
     output: {
         path: './docs',
