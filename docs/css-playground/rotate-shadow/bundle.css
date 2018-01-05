@@ -5,9 +5,7 @@
   top: 0;
   bottom: 0;
   background: #38f;
-  -webkit-transition-duration: 0.5s;
-          transition-duration: 0.5s;
-  -webkit-transition-property: -webkit-transform box-shadow;
+  transition-duration: 0.5s;
   transition-property: -webkit-transform box-shadow;
   transition-property: transform box-shadow;
   transition-property: transform box-shadow, -webkit-transform box-shadow; }

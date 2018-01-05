@@ -8,7 +8,6 @@
     width: 170px;
     height: 175px;
     margin-left: 23px;
-    -webkit-transition: all 1s;
     transition: all 1s; }
     .charactor .head .ear {
       position: absolute;
@@ -256,11 +255,9 @@
     width: 90px;
     height: 50px;
     margin-left: 43px;
-    background: -webkit-linear-gradient(top, #b4d469 19px, #fff 20px, #fff 23px, #b4d469 24px);
     background: linear-gradient(180deg, #b4d469 19px, #fff 20px, #fff 23px, #b4d469 24px);
     border: 5px solid #333;
     border-radius: 30% 30% 45% 45% / 80% 80% 20% 20%;
-    -webkit-transition: all 1s;
     transition: all 1s; }
     .charactor .body .hand {
       position: absolute;

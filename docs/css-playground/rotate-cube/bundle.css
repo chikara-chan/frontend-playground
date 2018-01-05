@@ -21,7 +21,6 @@
   position: absolute;
   width: 200px;
   height: 200px;
-  background: -webkit-repeating-linear-gradient(left, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5) 1px, transparent 3px, transparent 20px), -webkit-repeating-linear-gradient(top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5) 1px, transparent 3px, transparent 20px);
   background: repeating-linear-gradient(to right, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5) 1px, transparent 3px, transparent 20px), repeating-linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5) 1px, transparent 3px, transparent 20px); }
 
 .stage .cube .side.left {
